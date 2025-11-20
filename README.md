@@ -11,9 +11,9 @@ Program provádí webscraping stránky a analyzuje:
 - Nadpisy všech úrovní (h1-h6)
 - Odstavce a jejich statistiky
 - Meta tagy
-- Vyhledává zadané jméno v textu a určuje nadřazený tag
+- **Vyhledává jméno "Petr Rýdlo" v textu a určuje nadřazený tag**
 
-Vzhledem k tomu, že neexistuje veřejná stránka s jménem "Petr Rýdlo", program používá alternativní možnost ze zadání - Wikipedia stránku o Louisi de Funès (herec, který hrál Fantomase).
+Vzhledem k tomu, že neexistuje veřejná stránka s jménem "Petr Rýdlo", program používá alternativní možnost ze zadání - Wikipedia stránku o Louisi de Funès (herec, který hrál Fantomase), ale hledá jméno "Petr Rýdlo".
 
 ## Požadavky
 ```bash
@@ -42,11 +42,9 @@ Program zobrazí výsledky v konzoli a uloží strukturovaná data do JSON soubo
    H1 (1 výskytů): Louis de Funès
    H2 (5 výskytů): Obsah, Život, Kariéra...
 
-🔍 HLEDÁNÍ JMÉNA: 'Louis de Funès'
-   ✅ Nalezeno 155 výskytů jména
-   📌 PRVNÍ VÝSKYT:
-      • Tag: <p>
-      • Nadřazený element: <div>
+🔍 HLEDÁNÍ JMÉNA: 'Petr Rýdlo'
+   ❌ Jméno 'Petr Rýdlo' nebylo na stránce nalezeno
+   ℹ️  To je očekávané - demonstrace funkčnosti hledání
 ```
 
 ## Funkce
