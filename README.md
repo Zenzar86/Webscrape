@@ -1,6 +1,10 @@
 # Webscraper
 
-Program pro webscraping veřejné stránky s hledaným jménem.
+Program pro webscraping veřejných stránek s hledaným jménem.
+
+## Verze
+- **webscraper.py** - Verze 1.0: Analyzuje jednu konkrétní stránku
+- **webscraper_v2.py** - Verze 2.0: Vyhledává a analyzuje více stránek obsahujících hledané jméno
 
 ## Autor
 Petr Rýdlo
@@ -21,30 +25,46 @@ pip install requests beautifulsoup4
 ```
 
 ## Použití
+
+### Verze 1.0 (webscraper.py)
 ```bash
 python3 webscraper.py
 ```
+Analyzuje Wikipedii o Louisi de Funès a hledá jméno "Petr Rýdlo".
 
-Program automaticky načte Wikipedii o Louisi de Funès a provede kompletní analýzu.
+### Verze 2.0 (webscraper_v2.py) - DOPORUČENO
+```bash
+python3 webscraper_v2.py
+```
+Analyzuje skutečné stránky obsahující jméno "Petr Rýdlo":
+- https://www.antikavion.cz/autor/petr-rydlo
+- https://gask.art/ (Galerie - Zasloužilý umělec Petr Rýdlo)
+- https://rejstrik-firem.kurzy.cz/
 
 ## Výstup
-Program zobrazí výsledky v konzoli a uloží strukturovaná data do JSON souboru `webscraping_vysledky.json`.
+- **Verze 1.0**: Uloží výsledky do `webscraping_vysledky.json`
+- **Verze 2.0**: Uloží výsledky do `webscraping_vysledky_v2.json`
 
-## Příklad výstupu
+## Příklad výstupu (Verze 2.0)
 ```
-🔗 ANALÝZA ODKAZŮ
-   Celkem nalezeno: 588 odkazů
-   • Interní odkazy: 417
-   • Externí odkazy: 136
-   • Kotvy (anchors): 35
+🌐 [2/3] STRÁNKA
+📄 Analyzuji: https://gask.art/book/zaslouzily-umelec-petr-rydlo-obrazy-sklo/
 
-📑 ANALÝZA NADPISŮ
-   H1 (1 výskytů): Louis de Funès
-   H2 (5 výskytů): Obsah, Život, Kariéra...
+📊 STATISTIKY:
+   • Odkazy: 79 interních, 56 externích
+   • Nadpisy: 12 celkem
+   • Odstavce: 11
 
-🔍 HLEDÁNÍ JMÉNA: 'Petr Rýdlo'
-   ❌ Jméno 'Petr Rýdlo' nebylo na stránce nalezeno
-   ℹ️  To je očekávané - demonstrace funkčnosti hledání
+🎯 NALEZENO JMÉNO 'Petr Rýdlo':
+   • Počet výskytů: 5
+
+📌 První výskyt:
+   • Tag: <div>
+   • Nadřazený tag: <body>
+
+📊 CELKOVÝ SOUHRN:
+   • Analyzováno stránek: 3
+   • Jméno nalezeno na: 1 stránkách
 ```
 
 ## Funkce
